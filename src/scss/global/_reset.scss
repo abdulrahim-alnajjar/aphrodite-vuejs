@@ -1,0 +1,44 @@
+/* My-edits */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+svg{
+  box-sizing: content-box;
+}
+ul,
+ol {
+}
+li {
+  display: block;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+li,
+.logo,
+a {
+  text-transform: capitalize;
+  color: inherit;
+  text-decoration: none;
+  background-color: transparent;
+}
+button,
+input,
+optgroup,
+select,
+textarea {
+  border: none;
+  outline: none;
+  color: inherit;
+  background-color: unset;
+}
+input {
+  height: 100%;
+}

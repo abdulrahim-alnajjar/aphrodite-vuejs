@@ -1,0 +1,82 @@
+:root {
+  font-size: 16px;
+}
+body {
+  font-family: "Open Sans", sans-serif;
+  color: $body-color;
+  background-color: $body-bg-color;
+  // Direction
+}
+a {
+  @media ($md) {
+    &:hover > * {
+      color: $link-hover;
+      fill: $link-hover !important;
+    }
+  }
+}
+.icon {
+  cursor: pointer;
+}
+// main heads for sections
+.main-head {
+  text-align: center;
+  position: relative;
+  padding: 4rem;
+  color: $white;
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background-color: $d-gray;
+    z-index: -1;
+  }
+  &::before {
+    width: 100px;
+    height: 100px;
+    background-color: transparent;
+    border: 5px solid $d-gray;
+  }
+  &::after {
+    width: 85px;
+    height: 85px;
+  }
+}
+// read more in paragraphies
+.read-more {
+  padding-top: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: bold;
+  color: $white;
+  text-align: end;
+  text-transform: capitalize;
+  cursor: pointer;
+}
+// post-brief
+.post-brief {
+  padding: 0.5rem 1rem;
+  p {
+    // @extend %overflow-ellipsis;
+  }
+  .post-info {
+    @extend %flex-space-between;
+    padding: 0.5rem 0;
+    .date {
+      font-size: 14px;
+    }
+    .actions {
+      .icon {
+        width: 16px;
+        fill: $l-gray;
+        margin: 0 0.25rem;
+      }
+      .comments {
+        margin: 0 0.25rem;
+      }
+    }
+  }
+}

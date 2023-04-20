@@ -1,18 +1,28 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
-  </div>
+  <main class="home-page">
+    <CateguresBar></CateguresBar>
+    <LatestEvents></LatestEvents>
+    <WeekEvents></WeekEvents>
+    <CelebrityLooks></CelebrityLooks>
+  </main>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
-
+import CateguresBar from "@/components/home/CateguresBar.vue";
+import LatestEvents from "@/components/home/LatestEvents.vue";
+import WeekEvents from "@/components/home/WeekEvents.vue";
+import CelebrityLooks from "@/components/home/CelebrityLooks.vue";
 export default {
   name: "HomeView",
   components: {
-    HelloWorld,
+    CateguresBar,
+    LatestEvents,
+    WeekEvents,
+    CelebrityLooks,
   },
 };
 </script>
+
+<style lang="scss" scoped>
+@import "@/scss/main.scss";
+</style>

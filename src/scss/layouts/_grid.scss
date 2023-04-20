@@ -1,0 +1,31 @@
+// grid //////////////////////////////////////////////////////////////////////
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 0.5rem;
+}
+// container //////////////////////////////////////////////////////////////////////
+.container {
+  padding: 0px 1rem;
+  margin: 0px auto;
+  @media ($sm) {
+    max-width: 540px;
+  }
+  @media ($md) {
+    max-width: 720px;
+  }
+  @media ($lg) {
+    max-width: 960px;
+  }
+  @media ($xl) {
+    max-width: 1140px;
+  }
+  @media ($xxl) {
+    max-width: 1320px;
+  }
+}
+
+// utilizes
+.hidden {
+  display: none;
+}

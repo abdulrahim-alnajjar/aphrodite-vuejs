@@ -1,0 +1,49 @@
+// Overlay //
+@mixin overlay($color, $alpha, $z) {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba($color, $alpha);
+  z-index: $z;
+}
+
+//prefixer//
+@mixin prefixer($property, $value, $prefixes: ()) {
+  @each $prefix in $prefixes {
+    #{'-'+$prefix+'-'+$property}: $value;
+  }
+  #{$property}: $value;
+}
+
+// Arow //
+@mixin arow($sixe, $direction, $x, $y, $color) {
+  content: "";
+  width: 0;
+  height: 0;
+  position: absolute;
+  top: $y;
+  left: $x;
+  border: $sixe solid transparent;
+  border-#{$direction}-color: $color;
+}
+
+// square //
+@mixin square($size) {
+  width: $size;
+  height: $size;
+}
+
+//key-frame//
+@mixin key-frame($animation-name) {
+  @-webkit-keyframes #{$animation-name} {
+    @content;
+  }
+  @-moz-keyframes #{$animation-name} {
+    @content;
+  }
+  @keyframes #{$animation-name} {
+    @content;
+  }
+}

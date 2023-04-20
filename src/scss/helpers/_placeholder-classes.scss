@@ -1,0 +1,20 @@
+%flex-space-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+%overflow-ellipsis {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+%logo {
+  display: block;
+  font-size: 22px;
+  font-weight: bolder;
+  margin-right: auto; // Direction //
+  color: $white !important;
+}

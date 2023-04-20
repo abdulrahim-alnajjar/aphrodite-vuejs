@@ -1,0 +1,28 @@
+.button {
+  border-radius: 10px;
+  background-color: $main-color;
+  border: none;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 12px;
+  transition: all 0.5s;
+  margin-right: 20px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  &:hover {
+    padding-right: 36px;
+  }
+  &:after {
+    content: "»";
+    position: absolute;
+    right: -15px;
+    opacity: 0;
+    transition: 0.5s;
+  }
+  &:hover:after {
+    opacity: 1;
+    right: 15px;
+  }
+}
