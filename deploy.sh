@@ -16,11 +16,12 @@ git init
 git add -A
 git commit -m 'deploy'
 
+git branch -M main
+
 # if you are deploying to https://<USERNAME>.github.io
-git push -f git@github.com:abdulrahim-alnajjar/aphrodite.github.io.git main
+# git push -f git@github.com:abdulrahim-alnajjar/aphrodite.github.io.git main
 
 # if you are deploying to https://<USERNAME>.github.io/<REPO>
-#main:gh-pages
-# git push -f git@github.com:abdulrahim-alnajjar/aphrodite.github.io.git master:gh-pages
+git push -f git@github.com:abdulrahim-alnajjar/aphrodite-vuejs.git main:gh-pages
 
 cd -
