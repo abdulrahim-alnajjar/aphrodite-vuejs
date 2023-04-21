@@ -1,3 +1,7 @@
+git add .
+git commit -m 'New Deploy'
+git push -f git@github.com:abdulrahim-alnajjar/aphrodite-vuejs.git main
+
 #!/usr/bin/env sh
 
 # abort on errors

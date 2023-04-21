@@ -1,17 +1,35 @@
 <template>
   <main>
     <div class="container">
-      <form @submit.prevent="" class="login-form">
-        <h2 class="title">Login to your Account</h2>
-        <input v-model="user" type="text" placeholder="Username Or Email" />
+      <form @submit.prevent="submitForm" class="sign-form">
+        <h2 class="title">Crate an Account</h2>
+        <input
+          v-model.trim.lazy="firstName"
+          type="text"
+          placeholder="First Name"
+        />
+        <input
+          v-model.trim.lazy="lastName"
+          type="text"
+          placeholder="Last Name"
+        />
+        <input v-model.number="age" type="number" placeholder="Age" />
+        <input v-model="user" type="text" placeholder="Username" />
+        <input v-model="email" class="input" type="email" placeholder="Email" />
         <input v-model="password" type="password" placeholder="Password" />
+        <input
+          v-model="rePassword"
+          type="password"
+          placeholder="Password Again"
+        />
+        <input v-model="dateOfBirth" type="date" />
         <input class="submit" type="submit" value="Submit" />
         <span class="switch">
-          Don't have an account?
+          Already have an account..
           <span class="sign_toggle"
-            ><router-link to="/sign-up">Sign Up</router-link></span
-          ></span
-        >
+            ><router-link to="/login">Login In</router-link>
+          </span>
+        </span>
         <div class="separator">
           <hr class="line" />
           <span>Or</span>
@@ -50,109 +68,29 @@
 
 <script>
 export default {
-  name: "LoginView",
+  name: "SignupView",
   data() {
     return {
+      firstName: "",
+      lastName: "",
+      age: null,
       user: "",
+      email: "",
       password: "",
+      dateOfBirth: "",
+      rePassword: "",
     };
+  },
+  methods: {
+    submitForm() {
+      console.log("ggos");
+    },
   },
 };
 </script>
 
 <style lang="scss">
 @import "@/scss/main.scss";
-.login-form,
 .sign-form {
-  width: 90%;
-  min-height: 60vh;
-  padding: 1rem;
-  margin: 3rem auto;
-  border-radius: $border-radius;
-  box-shadow: 2px 2px 15px $main-color;
-  @media ($md) {
-    width: 50%;
-    padding: 3rem;
-  }
-  .title {
-    text-align: center;
-    color: $white;
-    margin: 1rem 0 3rem 0;
-  }
-  input,
-  .sign-in_ggl,
-  .sign-in_apl {
-    // text-align: center;
-    font-size: 1rem;
-    display: block;
-    width: 80%;
-    padding: 1rem;
-    margin: 1.5rem auto;
-    border-radius: $border-radius;
-    color: $white;
-  }
-  input:not([type="submit"]) {
-    box-shadow: inset 2px 2px 15px $main-color;
-  }
-  .submit {
-    font-weight: bold;
-    cursor: pointer;
-    background: $main-color;
-    transition: 0.5s;
-    @media ($md) {
-      &:hover {
-        box-shadow: inset 2px 2px 15px rgba(0, 0, 0, 0.5);
-      }
-    }
-  }
-  // switch to sign up
-  .switch {
-    font-size: 1rem;
-    display: block;
-    text-align: center;
-    margin: 1.5rem auto;
-    .sign_toggle {
-      font-weight: bold;
-      cursor: pointer;
-      color: $white;
-    }
-  }
-  // separator
-  .separator {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 30px;
-    color: #8b8e98;
-    .line {
-      width: 100%;
-      height: 1px;
-      border: 0;
-      background-color: #e8e8e8;
-    }
-  }
-  // Sign In ways
-  .sign-in_ggl {
-    border: 2px solid $l-gray;
-    color: $white;
-    background: transparent;
-  }
-  .sign-in_apl {
-    background: #000;
-  }
-  .sign-in_ggl,
-  .sign-in_apl {
-    cursor: pointer;
-    .icon {
-      width: 16px;
-      fill: $white;
-      margin-right: 0.5rem;
-    }
-  }
-  .note {
-    text-align: center;
-    margin: 1rem;
-  }
 }
 </style>
