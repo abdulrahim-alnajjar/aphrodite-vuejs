@@ -1,7 +1,7 @@
 <template>
   <main>
-    <div class="container">
-      <form @submit.prevent="" class="login-form">
+    <div @submit.prevent="" class="container">
+      <form class="login-form">
         <h2 class="title">Login to your Account</h2>
         <input v-model="user" type="text" placeholder="Username Or Email" />
         <input v-model="password" type="password" placeholder="Password" />
@@ -57,6 +57,11 @@ export default {
       password: "",
     };
   },
+  methods: {
+    submitForm() {
+      console.log("ggos");
+    },
+  },
 };
 </script>
 
@@ -64,14 +69,14 @@ export default {
 @import "@/scss/main.scss";
 .login-form,
 .sign-form {
-  width: 90%;
+  width: 95%;
   min-height: 60vh;
   padding: 1rem;
   margin: 3rem auto;
   border-radius: $border-radius;
   box-shadow: 2px 2px 15px $main-color;
   @media ($md) {
-    width: 50%;
+    width: 70%;
     padding: 3rem;
   }
   .title {
@@ -85,14 +90,14 @@ export default {
     // text-align: center;
     font-size: 1rem;
     display: block;
-    width: 80%;
+    width: 90%;
     padding: 1rem;
     margin: 1.5rem auto;
     border-radius: $border-radius;
     color: $white;
   }
   input:not([type="submit"]) {
-    box-shadow: inset 2px 2px 15px $main-color;
+    box-shadow: inset 2px 2px 15px rgba(0, 0, 0, 0.5);
   }
   .submit {
     font-weight: bold;
