@@ -1,7 +1,7 @@
 <template>
   <header>
     <svg
-      @click="toggleNavMenu()"
+      @click="toggleNavMenu"
       v-click-away="closeNavMenu"
       class="bars icon"
       xmlns="http://www.w3.org/2000/svg"
@@ -16,7 +16,7 @@
         d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"
       />
     </svg>
-    <a class="logo" href="">Aphrodite</a>
+    <a class="logo" href="#">Aphrodite</a>
     <form class="search-form">
       <svg
         @click="submitForm($event)"
@@ -65,7 +65,7 @@
         <router-link to="/login">Login</router-link>
       </button>
     </div>
-    <AppHeaderNav />
+    <AppHeaderNav></AppHeaderNav>
     <div class="blure-overlay">
       <svg
         @click="toggleSearchForm"
@@ -90,6 +90,7 @@ export default {
     return {
       barsIcon: true,
       signed: false,
+      navMenuClicked: "gg",
     };
   },
   methods: {
@@ -97,9 +98,14 @@ export default {
       document.querySelector("header .nav-menu").classList.toggle("open");
       this.barsIcon = !this.barsIcon;
     },
-    closeNavMenu() {
-      document.querySelector("header .nav-menu").classList.remove("open");
-      this.barsIcon = true;
+    closeNavMenu(event) {
+      if (
+        event.target != document.querySelector("header .nav-menu") &&
+        !document.querySelector("header .nav-menu").contains(event.target)
+      ) {
+        document.querySelector("header .nav-menu").classList.remove("open");
+        this.barsIcon = true;
+      }
     },
     toggleSearchForm() {
       document.querySelector("header .search-form").classList.toggle("open");
@@ -115,6 +121,11 @@ export default {
     AppHeaderNav,
   },
   mixins: [VueClickAway],
+  mounted() {
+    // document.addEventListener("click", () => {
+    //   console.log(this.navMenuClicked);
+    // });
+  },
 };
 </script>
 

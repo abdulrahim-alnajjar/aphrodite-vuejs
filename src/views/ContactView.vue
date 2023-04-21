@@ -9,4 +9,10 @@ export default {
   name: "ContactView",
 };
 </script>
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.contact-page {
+  h1 {
+    text-align: center;
+  }
+}
+</style>

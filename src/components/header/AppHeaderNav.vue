@@ -6,9 +6,9 @@
       <li><router-link to="/about">about</router-link></li>
     </ul>
     <ul class="categores">
-      <li><a href="">fasion</a></li>
-      <li><a href="">sports</a></li>
-      <li><a href="">food</a></li>
+      <li><a href="#">fasion</a></li>
+      <li><a href="#">sports</a></li>
+      <li><a href="#">food</a></li>
     </ul>
   </div>
 </template>

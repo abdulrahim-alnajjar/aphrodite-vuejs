@@ -41,7 +41,7 @@ export default {
     @extend %flex-space-between;
     flex-wrap: wrap;
     align-items: center;
-    padding: 1rem 0;
+    padding: 1rem;
     margin: 0 auto;
     h2 {
       color: $white;

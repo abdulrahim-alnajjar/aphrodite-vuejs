@@ -11,18 +11,21 @@
   position: relative;
   overflow: hidden;
   cursor: pointer;
-  &:hover {
-    padding-right: 36px;
-  }
-  &:after {
-    content: "»";
-    position: absolute;
-    right: -15px;
-    opacity: 0;
-    transition: 0.5s;
-  }
-  &:hover:after {
-    opacity: 1;
-    right: 15px;
+  @media ($md) {
+    &:hover {
+      padding-right: 36px;
+
+      &::after {
+        opacity: 1;
+        right: 15px;
+      }
+    }
+    &:after {
+      content: "»";
+      position: absolute;
+      right: -15px;
+      opacity: 0;
+      transition: 0.5s;
+    }
   }
 }

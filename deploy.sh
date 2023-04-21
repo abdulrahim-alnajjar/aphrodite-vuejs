@@ -19,7 +19,7 @@ git commit -m 'deploy'
 git branch -M main
 
 # if you are deploying to https://<USERNAME>.github.io
-# git push -f git@github.com:abdulrahim-alnajjar/aphrodite.github.io.git main
+# git push -f git@github.com:abdulrahim-alnajjar/aphrodite-vuejs.git main
 
 # if you are deploying to https://<USERNAME>.github.io/<REPO>
 git push -f git@github.com:abdulrahim-alnajjar/aphrodite-vuejs.git main:gh-pages
